@@ -9,10 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var chems = 10
+    var turns = 25
+    var locationProv = LocationProvider()
+    var place = "Nowhere"
+    
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var chemLabel: UILabel!
+    @IBOutlet weak var turnLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        placeLabel.text = place
+    }
+    
+    @IBAction func travelButton() {
+        place = locationProv.randomLocation()
+        updateLabels()
     }
 
 
