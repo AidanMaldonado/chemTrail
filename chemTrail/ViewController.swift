@@ -26,10 +26,19 @@ class ViewController: UIViewController {
     
     func updateLabels() {
         placeLabel.text = place
+        turnLabel.text = "Turns: \(turns)"
+        chemLabel.text = "Chems: \(chems)"
     }
     
     @IBAction func travelButton() {
-        place = locationProv.randomLocation()
+        if chems >= 1 && turns >= 1 {
+            place = locationProv.randomLocation()
+            turns -= 1
+            chems -= 1
+        } else {
+            place = "Game over"
+        }
+        
         updateLabels()
     }
 

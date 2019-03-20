@@ -9,7 +9,7 @@
 import UIKit
 
 struct LocationProvider {
-    var location = ["Nowhere", "Shack"]
+    var location = ["Nowhere", "Shack", "Chem Station"]
     
     func randomLocation() -> String {
         let random = Int.random(in: 0..<location.count)
